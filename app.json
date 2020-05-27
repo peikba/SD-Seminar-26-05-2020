@@ -22,6 +22,12 @@
       "publisher": "Microsoft",
       "name": "Base Application",
       "version": "16.0.0.0"
+    },
+    {
+      "id": "f0a2f193-043e-4cfc-a527-d6ddff726041",
+      "name": "Extra Fields on Customer",
+      "version": "16.0.0.0",
+      "publisher": "Default publisher"
     }
   ],
   "screenshots": [],
