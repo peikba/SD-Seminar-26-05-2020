@@ -3,6 +3,8 @@ page 50134 "CSD Posted Seminar Reg."
     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 7 - Lab 3
     //     - Created new page
+    //   Chapter 8 - Lab 2 - 4
+    //   Added Action Navigate
 
     Caption = 'Posted Seminar Registration';
     Editable = false;
@@ -124,8 +126,8 @@ page 50134 "CSD Posted Seminar Reg."
         {
             part("Seminar Details FactBox"; "CSD Seminar Details FactBox")
             {
-                ApplicationArea = All;
                 SubPageLink = "No." = Field("Seminar No.");
+                ApplicationArea = All;
             }
             part("Customer Details FactBox"; "Customer Details FactBox")
             {
@@ -156,8 +158,8 @@ page 50134 "CSD Posted Seminar Reg."
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = page "Comment List";
-                    RunPageLink = "No." = Field("No.");
-                    RunPageView = where("Table Name" = const("CSD Posted Seminar Registration"));
+                    RunPageLink = "No." = Field ("No.");
+                    RunPageView = where ("Table Name" = const ("CSD Posted Seminar Registration"));
                     ApplicationArea = All;
                 }
                 action("&Charges")
@@ -165,9 +167,28 @@ page 50134 "CSD Posted Seminar Reg."
                     Caption = '&Charges';
                     Image = Costs;
                     RunObject = Page "CSD Posted Seminar Charges";
-                    RunPageLink = "Document No." = Field("No.");
-                    ApplicationArea = All;
+                                    RunPageLink = "Document No." = Field("No.");
+                                    ApplicationArea = All;
                 }
+            }
+        }
+        area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = All;
+
+                trigger OnAction();
+                var
+                    Navigate: page Navigate;
+                begin
+                    Navigate.SetDoc("Posting Date", "No.");
+                    Navigate.Run();
+                end;
             }
         }
     }

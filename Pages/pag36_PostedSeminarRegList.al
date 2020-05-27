@@ -82,8 +82,8 @@ page 50136 "CSD Posted Seminar Reg. List"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = page "Comment List";
-                    RunPageLink = "No." = Field("No.");
-                    RunPageView = where("Table Name" = const("CSD Posted Seminar Registration"));
+                    RunPageLink = "No." = Field ("No.");
+                    RunPageView = where ("Table Name" = const ("CSD Posted Seminar Registration"));
                     ApplicationArea = All;
                 }
                 action("&Charges")
@@ -91,9 +91,28 @@ page 50136 "CSD Posted Seminar Reg. List"
                     Caption = '&Charges';
                     Image = Costs;
                     RunObject = Page 50139;
-                    RunPageLink = "Document No." = Field("No.");
-                    ApplicationArea = All;
+                                    RunPageLink = "Document No." = Field("No.");
+                                    ApplicationArea = All;
                 }
+            }
+        }
+        area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                ApplicationArea = All;
+
+                trigger OnAction();
+                var
+                    Navigate: page Navigate;
+                begin
+                    Navigate.SetDoc("Posting Date", "No.");
+                    Navigate.Run();
+                end;
             }
         }
     }

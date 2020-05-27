@@ -14,7 +14,7 @@ codeunit 50100 "CSD Seminar-Post"
             TestField("Posting Date");
             TestField("Document Date");
             TestField("Seminar No.");
-            TestField(Duration);
+            TestField("Duration");
             TestField("Instructor Resource No.");
             TestField("Room Resource No.");
             TestField(Status, Status::Closed);

@@ -12,6 +12,7 @@ page 50113 "CSD Seminar Registration List"
     PageType = List;
     SourceTable = "CSD Seminar Reg. Header";
     UsageCategory = lists;
+    ApplicationArea = All;
 
     layout
     {
