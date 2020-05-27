@@ -6,7 +6,7 @@ Import-Module 'C:\Program Files (x86)\Microsoft Dynamics 365 Business Central\14
 
 # Export objects from database
 Export-NAVApplicationObject -DatabaseServer 'localhost' -DatabaseName 'Demo Database BC (14-0)' `
-                            -Filter 'Type=Page;Id=20..21' `
+                            -Filter 'Type=Page;Id=21..22' `
                             -Path 'c:\temp\Al\Objects.txt' `
                             -ExportToNewSyntax
 
